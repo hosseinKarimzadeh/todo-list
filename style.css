@@ -57,7 +57,7 @@ body {
     max-width: 60rem;
     margin: 0 auto;
     min-height: 3rem;
-    padding: 0 1.6rem;
+    padding: 0 1.7rem;
 }
 
 .actions__container--spaced {
@@ -71,12 +71,12 @@ body {
     font-weight: 300;
     height: 3.5rem;
     margin-right: 1.6rem;
-    padding: .4rem .8rem;
+    padding: .4rem .5rem;
 }
 
 .filter-todo {
     color: rgb(0, 0, 0);
-    width: 6rem;
+    width: 7rem;
     padding: 5px 10px;
     border-radius: 10px;
     height: 3.5rem;
