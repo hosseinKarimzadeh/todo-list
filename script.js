@@ -15,32 +15,48 @@ searchBar.addEventListener('keyup', searchEngine)
 function addTodo(e) {
     e.preventDefault()
     const value = formElement.querySelector('input').value
-
-    const todoContainer = document.createElement('li')
-    const todoName = document.createElement('span')
-    const deleteBtn = document.createElement('span')
-    const completeBtn = document.createElement('span')
-
-
-    saveTodos(value)
-
-
-    todoName.textContent = value
-    deleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>'
-    completeBtn.innerHTML = '<i class="fas fa-check"></i>'
-
-
-    todoName.className = 'todo'
-    deleteBtn.className = 'delete'
-    completeBtn.className = "check"
+    if (value === '') {
+        alert('This is empty')
+    } else {
+        const todoContainer = document.createElement('li')
+        const todoName = document.createElement('span')
+        const deleteBtn = document.createElement('span')
+        const completeBtn = document.createElement('span')
 
 
 
-    list.appendChild(todoContainer)
-    todoContainer.appendChild(todoName)
-    todoContainer.appendChild(deleteBtn)
-    todoContainer.appendChild(completeBtn)
+        saveTodos(value)
+
+
+        todoName.textContent = value
+        deleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>'
+        completeBtn.innerHTML = '<i class="fas fa-check"></i>'
+
+
+        todoName.className = 'todo'
+        deleteBtn.className = 'delete'
+        completeBtn.className = "check"
+        todoContainer.style.backgroundColor = randomBgColor()
+        todoContainer.style.borderLeftColor = randomBorderColor()
+
+
+
+        list.appendChild(todoContainer)
+        todoContainer.appendChild(todoName)
+        todoContainer.appendChild(deleteBtn)
+        todoContainer.appendChild(completeBtn)
+    }
+
     formElement.querySelector('input').value = ''
+}
+
+
+function randomBgColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+function randomBorderColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 
 function deleteTodos(e) {
@@ -141,6 +157,8 @@ function getSavedData() {
 
         todoName.className = 'todo'
         deleteBtn.className = 'delete'
+        todoContainer.style.backgroundColor = randomBgColor()
+        todoContainer.style.borderLeftColor = randomBorderColor()
 
 
         list.appendChild(todoContainer)
@@ -149,13 +167,6 @@ function getSavedData() {
         todoContainer.appendChild(completeBtn)
     })
 }
-
-
-
-
-
-
-
 
 
 
