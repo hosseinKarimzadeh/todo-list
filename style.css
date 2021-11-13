@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #273036;
+    color: #fafafa;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+}
+
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+
+/* Header */
+
+.header {
+    font-family: 'Yuji Syuku', serif;
+    background: #6F439C;
+    color: white;
+    padding: 1.6rem 0;
+}
+
+.header-title {
+    font-size: 3.5 rem;
+    margin-bottom: .4rem;
+}
+
+.header__subtitle {
+    /* color: #777; */
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.actions {
+    background-color: #4c4950;
+    padding: 1rem
+}
+
+.actions__container {
+    align-items: center;
+    display: flex;
+    max-width: 60rem;
+    margin: 0 auto;
+    min-height: 3rem;
+    padding: 0 1.6rem;
+}
+
+.actions__container--spaced {
+    justify-content: space-between
+}
+
+.first-input {
+    border-radius: 10px;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    height: 3.5rem;
+    margin-right: 1.6rem;
+    padding: .4rem .8rem;
+}
+
+.filter-todo {
+    color: rgb(0, 0, 0);
+    width: 7rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+select {
+    resize: vertical;
+}
+
+ul {
+    margin-left: -10px;
+    max-width: 50rem;
+    list-style-type: none;
+    padding: 0px 0;
+}
+
+li {
+    border-radius: 30px 0;
+    margin-top: 20px;
+    background-color: rgb(65, 65, 65);
+    padding: 20px;
+    border-left: 5px solid #ddd;
+    margin: 20px 10px;
+}
+
+li:hover {
+    border-color: #9361bf;
+}
+
+.fa-trash-alt,
+.fa-check {
+    color: #9361bf;
+    font-size: 28px;
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.add__container {
+    align-items: center;
+    display: flex;
+    max-width: 60rem;
+    margin: 20px auto;
+    min-height: 3rem;
+    padding: 0 1.6rem;
+}
+
+.add__container--spaced {
+    justify-content: space-between
+}
+
+.second-input {
+    border-radius: 10px;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    height: 3.5rem;
+    margin-right: 1.6rem;
+    padding: .4rem .8rem;
+}
+
+button {
+    border: 1px solid #9361bf;
+    height: 3.5rem;
+    background: #9361bf;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15rem;
+    color: #ddd;
+}
+
+.complete {
+    opacity: 30%;
+}
+
+.complete .todo {
+    text-decoration: line-through;
+}
+
+@media screen and (max-width:1024px) {}
+
+@media screen and (max-width:768px) {}
+
+@media screen and (max-width:415px) {}
+
+@media screen and (max-width:375px) {}
