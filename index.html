@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/527933ce5d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/ico" href="./icons8-todo-list-64.png">
+    <script src="script.js" defer></script>
+    <title>To-do List</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">To-do List</h1>
+            <h2 class="header__subtitle">What do you need to do?</h2>
+    </header>
+    <div class="actions">
+        <div class="actions__container">
+            <input id="search-todo" class="first-input" type="text" placeholder="Search books..." />
+            <select name="todos" class="filter-todo" id="filter-todo">
+                <option value="all-option">ALL</option>
+                <option value="completed-option">COMPLETED</option>
+                <option value="uncompleted-option">UNCOMPLETED</option>
+        </select>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div id="todos">
+            <ul id="book-box"></ul>
+        </div>
+    </div>
+
+
+
+    <form id="add-book" class="add__container">
+        <input class="second-input" type="text" placeholder="Add a todo..." />
+        <button>Add</button>
+    </form>
+
+    </div>
+
+</body>
+
+</html>
