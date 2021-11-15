@@ -8,6 +8,10 @@ const searchBar = document.getElementById('search-todo')
 document.addEventListener('DOMContentLoaded', getSavedData)
 list.addEventListener('click', deleteTodos);
 list.addEventListener('click', completeTodo)
+list.addEventListener('click', redBtnChanger)
+list.addEventListener('click', blueBtnChanger)
+list.addEventListener('click', yellowBtnChanger)
+list.addEventListener('click', greenBtnChanger)
 formElement.addEventListener('submit', addTodo);
 filterElement.addEventListener('click', filterTodo)
 searchBar.addEventListener('keyup', searchEngine)
@@ -20,8 +24,13 @@ function addTodo(e) {
     } else {
         const todoContainer = document.createElement('li')
         const todoName = document.createElement('span')
-        const deleteBtn = document.createElement('span')
-        const completeBtn = document.createElement('span')
+        const deleteBtn = document.createElement('i')
+        const completeBtn = document.createElement('i')
+        const colorChangerContainer = document.createElement('span')
+        const redBtn = document.createElement('button')
+        const blueBtn = document.createElement('button')
+        const yellowBtn = document.createElement('button')
+        const greenBtn = document.createElement('button')
 
 
 
@@ -29,15 +38,17 @@ function addTodo(e) {
 
 
         todoName.textContent = value
-        deleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>'
-        completeBtn.innerHTML = '<i class="fas fa-check"></i>'
 
 
         todoName.className = 'todo'
-        deleteBtn.className = 'delete'
-        completeBtn.className = "check"
-        todoContainer.style.backgroundColor = randomBgColor()
-        todoContainer.style.borderLeftColor = randomBorderColor()
+        deleteBtn.className = 'far fa-trash-alt'
+        completeBtn.className = "fas fa-check"
+        redBtn.className = 'red-btn'
+        blueBtn.className = 'blue-btn'
+        yellowBtn.className = 'yellow-btn'
+        greenBtn.className = 'green-btn'
+
+
 
 
 
@@ -45,23 +56,69 @@ function addTodo(e) {
         todoContainer.appendChild(todoName)
         todoContainer.appendChild(deleteBtn)
         todoContainer.appendChild(completeBtn)
+        todoContainer.appendChild(colorChangerContainer)
+        colorChangerContainer.appendChild(redBtn)
+        colorChangerContainer.appendChild(blueBtn)
+        colorChangerContainer.appendChild(yellowBtn)
+        colorChangerContainer.appendChild(greenBtn)
+
     }
 
     formElement.querySelector('input').value = ''
 }
 
-
-function randomBgColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+function redBtnChanger(e) {
+    if (e.target.className == 'red-btn') {
+        const li = e.target.parentElement.parentElement
+        var x = e.target.parentElement.previousSibling
+        var y = e.target.parentElement.previousSibling.previousSibling
+        x.style["color"] = 'white'
+        y.style["color"] = 'white'
+        li.style.backgroundColor = 'red'
+    }
 }
 
-function randomBorderColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+function blueBtnChanger(e) {
+    if (e.target.className == 'blue-btn') {
+        const li = e.target.parentElement.parentElement
+        var x = e.target.parentElement.previousSibling
+        var y = e.target.parentElement.previousSibling.previousSibling
+        x.style["color"] = 'white'
+        y.style["color"] = 'white'
+        li.style.backgroundColor = 'blue'
+
+    }
 }
+
+function yellowBtnChanger(e) {
+    if (e.target.className == 'yellow-btn') {
+        const li = e.target.parentElement.parentElement
+        var x = e.target.parentElement.previousSibling
+        var y = e.target.parentElement.previousSibling.previousSibling
+        x.style["color"] = 'black'
+        y.style["color"] = 'black'
+        li.style.backgroundColor = 'yellow'
+        li.style.color = 'black'
+    }
+}
+
+function greenBtnChanger(e) {
+    if (e.target.className == 'green-btn') {
+        const li = e.target.parentElement.parentElement
+        var x = e.target.parentElement.previousSibling
+        var y = e.target.parentElement.previousSibling.previousSibling
+        x.style["color"] = 'white'
+        y.style["color"] = 'white'
+        li.style.backgroundColor = 'green'
+    }
+
+}
+
+
 
 function deleteTodos(e) {
     if (e.target.className == 'far fa-trash-alt') {
-        const li = e.target.parentElement.parentElement
+        const li = e.target.parentElement
         list.removeChild(li)
         removeTodos(li);
     }
@@ -69,7 +126,7 @@ function deleteTodos(e) {
 
 function completeTodo(e) {
     if (e.target.className == 'fas fa-check') {
-        const liElement = e.target.parentElement.parentElement
+        const liElement = e.target.parentElement
         liElement.classList.toggle('complete')
     }
 }
@@ -110,6 +167,7 @@ function removeTodos(todo) {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
+
 function filterTodo(e) {
     const todos = list.childNodes;
     todos.forEach((todo) => {
@@ -143,37 +201,43 @@ function getSavedData() {
         todos = JSON.parse(localStorage.getItem('todos'))
     }
     todos.forEach(function(todo) {
-
         const todoContainer = document.createElement('li')
         const todoName = document.createElement('span')
-        const deleteBtn = document.createElement('span')
-        const completeBtn = document.createElement('span')
+        const deleteBtn = document.createElement('i')
+        const completeBtn = document.createElement('i')
+        const colorChangerContainer = document.createElement('span')
+        const redBtn = document.createElement('button')
+        const blueBtn = document.createElement('button')
+        const yellowBtn = document.createElement('button')
+        const greenBtn = document.createElement('button')
+
+
+
 
 
         todoName.textContent = todo
-        deleteBtn.innerHTML = '<i class="far fa-trash-alt"></i>'
-        completeBtn.innerHTML = '<i class="fas fa-check"></i>'
 
 
         todoName.className = 'todo'
-        deleteBtn.className = 'delete'
-        todoContainer.style.backgroundColor = randomBgColor()
-        todoContainer.style.borderLeftColor = randomBorderColor()
+        deleteBtn.className = 'far fa-trash-alt'
+        completeBtn.className = "fas fa-check"
+        redBtn.className = 'red-btn'
+        blueBtn.className = 'blue-btn'
+        yellowBtn.className = 'yellow-btn'
+        greenBtn.className = 'green-btn'
+
+
+
 
 
         list.appendChild(todoContainer)
         todoContainer.appendChild(todoName)
         todoContainer.appendChild(deleteBtn)
         todoContainer.appendChild(completeBtn)
+        todoContainer.appendChild(colorChangerContainer)
+        colorChangerContainer.appendChild(redBtn)
+        colorChangerContainer.appendChild(blueBtn)
+        colorChangerContainer.appendChild(yellowBtn)
+        colorChangerContainer.appendChild(greenBtn)
     })
 }
-
-
-
-
-
-
-
-
-
-
